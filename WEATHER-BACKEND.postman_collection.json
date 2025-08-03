@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "ff348973-cd89-4793-98fd-ac16ee5485b7",
+		"name": "WEATHER-BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13631388"
+	},
+	"item": [
+		{
+			"name": "/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin3@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user5@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/weather-by-city",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyM2NkNzFmNS02ZTc3LTRhZDYtOGQ1NS03MGE1ZWJhMTU4YzUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc1NDIzNTA5NCwiZXhwIjoxNzU0MzIxNDk0fQ.sBpNm1CSWD8sfGDDu1QliHiyui2Tn_eDlh08yDE2DZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/weather?city=istanbul",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "istanbul"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/weather/history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0N2UzZDA4Yi0zYWJhLTRlYzctYjQ3YS1kYzJhNmY5OGQ2N2QiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTQyMzE0NjcsImV4cCI6MTc1NDMxNzg2N30.H-7UZAJVeQ0PtD_mqzXa2_iOzNYVlDUktdKVxUdwyuo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/weather/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"weather",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users-create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyM2NkNzFmNS02ZTc3LTRhZDYtOGQ1NS03MGE1ZWJhMTU4YzUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc1NDIzMjIzMiwiZXhwIjoxNzU0MzE4NjMyfQ.9tGHLW91BoygnbJG4QleYTSFI6bH_GgozdX-H10XLnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user6@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -47,19 +47,25 @@ npm install
 
 ### 3. Set up environment variables
 Create a .env file:
-    PORT=3000
+
     DATABASE_URL="mysql://user:password@localhost:3306/weatherdb"
+
     REDIS_HOST=127.0.0.1
+
     REDIS_PORT=6379
+
     OPENWEATHER_API_KEY=your_openweather_api_key
+
     JWT_SECRET=your_jwt_secret
 
 ### 4. Set up environment variables
 npx prisma generate
+
 npx prisma migrate dev --name init
 
 ### 5. Run the server
 npm run dev
+
 Visit: http://localhost:3000
 
 ---
@@ -150,4 +156,5 @@ weather-backend/
  
 ## 👨‍💻 Author
 Case Study developed by Tuğrul Yüksel
+
 Contact: tugrulyuksel77@gmail.com

@@ -108,35 +108,20 @@ deploy (simulated)
 weather-backend/
 
 ├── src/
-
 │   ├── controllers/
-
 │   ├── routes/
-
 │   ├── services/
-
 │   ├── types/
-
 │   ├── middleware/
-
 │   ├── config/
-
 │   ├── utils/
-
 │   ├── prisma/
-
 │   ├── app.ts
-
 │   └── server.ts
-
 ├── __tests__/
-
 ├── .circleci/
-
 │   └── config.yml
-
 ├── README.md
-
 └── package.json
 
 

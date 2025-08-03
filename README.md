@@ -105,24 +105,7 @@ build
 deploy (simulated)
 
 ## ⚙️ CircleCI CI/CD (GCP Simulated)
-weather-backend/
-
-├── src/
-│   ├── controllers/
-│   ├── routes/
-│   ├── services/
-│   ├── types/
-│   ├── middleware/
-│   ├── config/
-│   ├── utils/
-│   ├── prisma/
-│   ├── app.ts
-│   └── server.ts
-├── __tests__/
-├── .circleci/
-│   └── config.yml
-├── README.md
-└── package.json
+<pre lang="md">weather-backend/ ├── src/ │ ├── controllers/ │ ├── routes/ │ ├── services/ │ ├── types/ │ ├── middleware/ │ ├── config/ │ ├── utils/ │ ├── prisma/ │ ├── app.ts │ └── server.ts ├── __tests__/ ├── .circleci/ │ └── config.yml ├── README.md └── package.json </code> </pre>
 
 
 ## Evaluation Criteria Checklist

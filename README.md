@@ -59,9 +59,9 @@ Create a .env file:
     JWT_SECRET=your_jwt_secret
 
 ### 4. Set up environment variables
-npx prisma generate
+npx prisma generate --schema ./src/prisma/schema.prisma
 
-npx prisma migrate dev --name init
+npx prisma migrate dev --name init --schema ./src/prisma/schema.prisma
 
 ### 5. Run the server
 npm run dev
@@ -74,6 +74,7 @@ Visit: http://localhost:3000
 ```bash
 npm run test
 ```
+![alt text](image-14.png)
 
 ## API Endpoints
 Auth
@@ -153,6 +154,34 @@ weather-backend/
 
  ✅Unit & integration tests with Jest
 
+## 👨‍💻 APIs Outputs
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
+![alt text](image-11.png)
+
+![alt text](image-12.png)
+
+![alt text](image-13.png)
  
 ## 👨‍💻 Author
 Case Study developed by Tuğrul Yüksel

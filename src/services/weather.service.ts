@@ -4,17 +4,17 @@ import { prisma } from "../config/db";
 import { WeatherQueryResponse } from "../types/openWeather";
 
 const API_KEY = process.env.OPENWEATHER_API_KEY!;
-const BASE_URL = "http://api.weatherstack.com/current";
+const BASE_URL = process.env.OPENWEATHER_API_BASE_URL;
 
 export const fetchWeatherData = async (city: string, userId: string) => {
   const cacheKey = `weather:${city.toLowerCase()}`;
 
-  // 1. Cache kontrolü
+  // Cache check
   const cached = await redis.get(cacheKey);
   if (cached) {
     const data = JSON.parse(cached);
 
-    // DB’ye kaydet (cache’ten geldiğini bilmeden)
+    // Store the search to DB
     await prisma.weatherQuery.create({
       data: {
         city,
@@ -28,7 +28,7 @@ export const fetchWeatherData = async (city: string, userId: string) => {
     return { source: "cache", data };
   }
 
-  // 2. API isteği
+  // API call
   const response = await axios.get(BASE_URL, {
     params: {
       access_key: API_KEY,
@@ -38,10 +38,10 @@ export const fetchWeatherData = async (city: string, userId: string) => {
 
   const data = response.data as WeatherQueryResponse;
 
-  // Cache’e yaz (1 dakika)
-  await redis.set(cacheKey, JSON.stringify(data), "EX", 60);
+  // Write to cache (cache timeout is set up as 1 min in order to test API fast. You can change it if you want)
+  await redis.set(cacheKey, JSON.stringify(data), "EX", process.env.CACHE_TIME || 60);
 
-  // DB’ye yaz
+  // Store the search to DB
   await prisma.weatherQuery.create({
     data: {
       city,

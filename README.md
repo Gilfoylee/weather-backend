@@ -58,7 +58,11 @@ Create a .env file:
 
     JWT_SECRET=your_jwt_secret
 
-### 4. Set up environment variables
+    OPENWEATHER_API_BASE_URL="http://api.weatherstack.com/current"
+
+    CACHE_TIME=60
+
+### 4.  🔧 Prisma Setup
 npx prisma generate --schema ./src/prisma/schema.prisma
 
 npx prisma migrate dev --name init --schema ./src/prisma/schema.prisma
@@ -157,7 +161,7 @@ weather-backend/
 
  ✅Unit & integration tests with Jest
 
-## 👨‍💻 APIs Outputs
+## API Outputs
 
 User tries to register with existing e-mail then user gets 'E-mail already exists' message.
 ![alt text](image.png)
@@ -205,6 +209,12 @@ admin3 retrieves all the searched weather info list.
 
 user5 tris to create a user then user5 gets 'Admin access required' message
 ![alt text](image-15.png) 
+
+
+## Future Improvements
+
+- Add Zod Validation for requests
+- Create a envs file inside utils folder. Assign env variables to seperate variables in a one file then use them like envs.apiKey.
 
 ## 👨‍💻 Author
 Case Study developed by Tuğrul Yüksel

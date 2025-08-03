@@ -126,14 +126,23 @@ weather-backend/
 
 ## Evaluation Criteria Checklist
  ✅Clean, modular TypeScript project structure
+
  ✅RESTful API & Prisma with MySQL
+
  ✅Role-based access control
+
  ✅OpenWeather API integration
+
  ✅Redis-based caching
+
  ✅JWT authentication
+
  ✅Swagger API docs
+
  ✅Postman API collection
+
  ✅CircleCI pipeline simulation (not tested)
+ 
  ✅Unit & integration tests with Jest
 
  

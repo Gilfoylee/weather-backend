@@ -95,6 +95,9 @@ POST /api/users (admin only)(auth required)
 API docs available at:
 👉 http://localhost:3000/api/docs
 
+![alt text](image-16.png)
+
+
 Includes:
 Auth
 Weather
@@ -160,12 +163,14 @@ User tries to register with existing e-mail then user gets 'E-mail already exist
 ![alt text](image.png)
 
 user4 registers successfully.
+
 ![alt text](image-1.png)
 
 User tries to loging with not existing e-mail address then user gets 'User not found' message.
 ![alt text](image-2.png)
 
 admin3 registers successfully.
+
 ![alt text](image-3.png)
 
 admin3 cannot loging with the wrong password.

@@ -215,6 +215,7 @@ user5 tris to create a user then user5 gets 'Admin access required' message
 
 - Add Zod Validation for requests
 - Create a envs file inside utils folder. Assign env variables to seperate variables in a one file then use them like envs.apiKey.
+- Create messages file and manage them in a one location easily. (error and info messages)
 
 ## 👨‍💻 Author
 Case Study developed by Tuğrul Yüksel

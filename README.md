@@ -155,34 +155,52 @@ weather-backend/
  ✅Unit & integration tests with Jest
 
 ## 👨‍💻 APIs Outputs
+
+User tries to register with existing e-mail then user gets 'E-mail already exists' message.
 ![alt text](image.png)
 
+user4 registers successfully.
 ![alt text](image-1.png)
 
+User tries to loging with not existing e-mail address then user gets 'User not found' message.
 ![alt text](image-2.png)
 
+admin3 registers successfully.
 ![alt text](image-3.png)
 
+admin3 cannot loging with the wrong password.
 ![alt text](image-4.png)
 
+admin3 login successfully.
 ![alt text](image-5.png)
 
+admin3 tris to create a user with a wrong token then admin3 gets 'invalid token' message.
 ![alt text](image-6.png)
 
+admin3 creates user5 successfully.
 ![alt text](image-7.png)
 
+user5 logins successfully.
 ![alt text](image-8.png)
 
+user5 gets İstanbul's weather info from API.
 ![alt text](image-9.png)
 
+user5 gets İstanbul's weather info from CACHE.
 ![alt text](image-10.png)
 
+user5 gets own weather info list with the count 2.
 ![alt text](image-11.png)
 
+admin3 logins successfully.
 ![alt text](image-12.png)
 
+admin3 retrieves all the searched weather info list.
 ![alt text](image-13.png)
- 
+
+user5 tris to create a user then user5 gets 'Admin access required' message
+![alt text](image-15.png) 
+
 ## 👨‍💻 Author
 Case Study developed by Tuğrul Yüksel
 

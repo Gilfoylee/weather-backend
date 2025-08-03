@@ -1,0 +1,58 @@
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:18.17.0
+    working_directory: ~/weather-backend
+
+jobs:
+  install-deps:
+    executor: node-executor
+    steps:
+      - checkout
+      - run: npm ci
+
+  run-tests:
+    executor: node-executor
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run test
+
+  build:
+    executor: node-executor
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+
+  deploy:
+    executor: node-executor
+    environment:
+      HOME: /home/circleci
+    steps:
+      - checkout
+      - run: |
+          echo "Simulating deploy to GCP..."
+          # Add GCP deploy commands like below
+          curl https://sdk.cloud.google.com | bash
+          source $HOME/google-cloud-sdk/path.bash.inc
+          gcloud auth activate-service-account --key-file=gcp-key.json
+          gcloud config set project <project-id>
+          gcloud app deploy app.yaml --quiet
+
+workflows:
+  version: 2
+  test-build-deploy:
+    jobs:
+      - install-deps
+      - run-tests:
+          requires:
+            - install-deps
+      - build:
+          requires:
+            - run-tests
+      - deploy:
+          requires:
+            - build
